@@ -294,7 +294,7 @@ func (pwsh) Setup(vhs *VHS) {
 	if prompt == "" {
 		prompt = "Function prompt {Write-Host \"> \" -ForegroundColor Blue -NoNewLine; return \"`0\" }"
 	}
-	vhs.runShellCommand(` clear; pwsh -Login -NoLogo; Set-PSReadLineOption -HistorySaveStyle SaveNothing; %s; clear;`, prompt)
+	vhs.runShellCommand(` clear; pwsh -Login -NoLogo -NoExit -Command 'Set-PSReadLineOption -HistorySaveStyle SaveNothing; %s'`, prompt)
 }
 
 func (generic) Setup(vhs *VHS) {

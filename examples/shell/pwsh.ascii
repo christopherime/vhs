@@ -1,7 +1,25 @@
-carlos@darkstar:~/Developer/charmbracelet/vhs$  clear; pwsh -Login -NoLogo; Set
--PSReadLineOption -HistorySaveStyle SaveNothing; Function prompt {Write-Host ">
- " -ForegroundColor Blue -NoNewLine; return "`0" }; clear;
-> echo current shell: $ShellId
+e
+> echo "current shell: $ShellId
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+e
+> echo "current shell: $ShellId"
+
+
 
 
 
@@ -16,29 +34,11 @@ carlos@darkstar:~/Developer/charmbracelet/vhs$  clear; pwsh -Login -NoLogo; Set
 
 
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  clear; pwsh -Login -NoLogo; Set
--PSReadLineOption -HistorySaveStyle SaveNothing; Function prompt {Write-Host ">
- " -ForegroundColor Blue -NoNewLine; return "`0" }; clear;
-> echo current shell: $ShellId
+e
+> echo "current shell: $ShellId"
+current shell: Microsoft.PowerShell
 >
 
-
-
-
-
-
-
-
-
-
-
-
-────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  clear; pwsh -Login -NoLogo; Set
--PSReadLineOption -HistorySaveStyle SaveNothing; Function prompt {Write-Host ">
- " -ForegroundColor Blue -NoNewLine; return "`0" }; clear;
-> echo current shell: $ShellId
->
 
 
 

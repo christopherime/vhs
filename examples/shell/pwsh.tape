@@ -3,6 +3,6 @@ Output examples/shell/pwsh.ascii
 
 Set Shell "pwsh"
 
-Type "echo current shell: $ShellId"
+Type 'echo "current shell: $ShellId"'
 Enter
-Sleep 100ms
+Sleep 200ms
