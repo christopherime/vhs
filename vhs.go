@@ -106,6 +106,10 @@ func (vhs *VHS) Setup() {
 	switch vhs.Options.Shell {
 	case "", "bash":
 		shellSetup = fmt.Sprintf(` set +o history; unset PROMPT_COMMAND; export PS1="%s"; clear;`, vhs.Options.Prompt)
+	case "zsh":
+		shellSetup = fmt.Sprintf(` PS1="%s" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;`, vhs.Options.Prompt)
+	case "fish":
+		shellSetup = fmt.Sprintf(` fish --login --private -c 'function fish_prompt; echo %s; end'; clear;`, vhs.Options.Prompt)
 	default:
 		shellSetup = fmt.Sprintf(` %s --login; clear;`, vhs.Options.Shell)
 	}

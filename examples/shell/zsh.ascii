@@ -1,0 +1,54 @@
+carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
+\e[0m\]" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;
+%
+\[\e[38;2;90;86;224m\]> \[\e[0m\]current shell: $0
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
+\e[0m\]" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;
+%
+\[\e[38;2;90;86;224m\]> \[\e[0m\]current shell: $0
+
+
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
+carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
+\e[0m\]" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;
+%
+\[\e[38;2;90;86;224m\]> \[\e[0m\]current shell: $0
+zsh: command not found: current
+\[\e[38;2;90;86;224m\]> \[\e[0m\]
+
+
+
+
+
+
+
+
+
+
+
+────────────────────────────────────────────────────────────────────────────────
