@@ -3,6 +3,6 @@ Output examples/shell/bash.ascii
 
 Set Shell "bash"
 
-Type "current shell: $0"
+Type "echo current shell: $0"
 Enter
 Sleep 100ms

@@ -1,4 +1,4 @@
-> current shell: $0
+> echo current shell: $0
 
 
 
@@ -16,7 +16,7 @@
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> current shell: $0
+> echo current shell: $0
 
 
 
@@ -34,8 +34,8 @@
 
 
 ────────────────────────────────────────────────────────────────────────────────
-> current shell: $0
-current: command not found
+> echo current shell: $0
+current shell: bash
 >
 
 

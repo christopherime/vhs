@@ -3,6 +3,6 @@ Output examples/shell/fish.ascii
 
 Set Shell "fish"
 
-Type "current shell: $0"
+Type "echo current shell: (basename (status fish-path))"
 Enter
 Sleep 100ms
