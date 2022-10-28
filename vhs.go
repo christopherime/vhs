@@ -102,23 +102,21 @@ func (vhs *VHS) Setup() {
 	vhs.CursorCanvas, _ = vhs.Page.Element("canvas.xterm-cursor-layer")
 
 	// Set Prompt
-	shellSetup := ""
 	switch vhs.Options.Shell {
 	case "", "bash":
-		shellSetup = fmt.Sprintf(`set +o history; unset PROMPT_COMMAND; export PS1="%s"`, vhs.Options.Prompt)
+		vhs.runShellCommand(` set +o history; unset PROMPT_COMMAND; export PS1="%s"; clear;`, vhs.Options.Prompt)
 	case "zsh":
-		vhs.Options.Prompt = "%F{blue bright dim}> %F{reset_color}"
-		shellSetup = fmt.Sprintf(`PS1="%s" SAVEHIST=0 HISTSIZE=0 zsh --login`, vhs.Options.Prompt)
+		vhs.runShellCommand(" clear; zsh --login --histnostore")
+		vhs.Options.Prompt = `%F{blue bright dim}> %F{reset_color}`
+		// PROMPT_SP: read about PROMPT_EOL_MARK
+		vhs.runShellCommand(` unsetopt PROMPT_SP; export PS1="%s"; clear`, vhs.Options.Prompt)
 	case "fish":
 		vhs.Options.Prompt = `function fish_prompt; echo -e "$(set_color --dim brblue)> $(set_color normal)"; end`
 		noGreeting := "function fish_greeting; end"
-		shellSetup = fmt.Sprintf(`fish --login --private -C '%s' -C '%s'`, noGreeting, vhs.Options.Prompt)
+		vhs.runShellCommand(` clear; fish --login --private -C '%s' -C '%s'`, noGreeting, vhs.Options.Prompt)
 	default:
-		shellSetup = fmt.Sprintf(`%s --login`, vhs.Options.Shell)
+		vhs.runShellCommand(` clear; %s --login`, vhs.Options.Shell)
 	}
-	vhs.Page.MustElement("textarea").
-		MustInput(" clear; " + shellSetup + "; clear").
-		MustType(input.Enter)
 
 	// Apply options to the terminal
 	// By this point the setting commands have been executed, so the `opts` struct is up to date.
@@ -235,4 +233,10 @@ func (vhs *VHS) PauseRecording() {
 	defer vhs.mutex.Unlock()
 
 	vhs.recording = false
+}
+
+func (vhs *VHS) runShellCommand(format string, a ...interface{}) {
+	vhs.Page.MustElement("textarea").
+		MustInput(fmt.Sprintf(format, a...)).
+		MustType(input.Enter)
 }
