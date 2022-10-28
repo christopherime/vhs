@@ -105,20 +105,19 @@ func (vhs *VHS) Setup() {
 	shellSetup := ""
 	switch vhs.Options.Shell {
 	case "", "bash":
-		shellSetup = fmt.Sprintf(` set +o history; unset PROMPT_COMMAND; export PS1="%s"; clear;`, vhs.Options.Prompt)
+		shellSetup = fmt.Sprintf(`set +o history; unset PROMPT_COMMAND; export PS1="%s"`, vhs.Options.Prompt)
 	case "zsh":
 		vhs.Options.Prompt = "%F{blue bright dim}> %F{reset_color}"
-		shellSetup = fmt.Sprintf(` PS1="%s" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;`, vhs.Options.Prompt)
+		shellSetup = fmt.Sprintf(`PS1="%s" SAVEHIST=0 HISTSIZE=0 zsh --login`, vhs.Options.Prompt)
 	case "fish":
 		vhs.Options.Prompt = `function fish_prompt; echo -e "$(set_color --dim brblue)> $(set_color normal)"; end`
 		noGreeting := "function fish_greeting; end"
-		shellSetup = fmt.Sprintf(` fish --login --private -C '%s' -C '%s'; clear;`, noGreeting, vhs.Options.Prompt)
+		shellSetup = fmt.Sprintf(`fish --login --private -C '%s' -C '%s'`, noGreeting, vhs.Options.Prompt)
 	default:
-		shellSetup = fmt.Sprintf(` %s --login; clear;`, vhs.Options.Shell)
+		shellSetup = fmt.Sprintf(`%s --login`, vhs.Options.Shell)
 	}
-	fmt.Println(shellSetup)
 	vhs.Page.MustElement("textarea").
-		MustInput(shellSetup).
+		MustInput(" clear; " + shellSetup + "; clear").
 		MustType(input.Enter)
 
 	// Apply options to the terminal

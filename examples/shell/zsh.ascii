@@ -1,5 +1,3 @@
-carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="%F{blue bright dim}> %F{re
-set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 %
 > echo current shell: $0
 
@@ -15,9 +13,9 @@ set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 
 
 
+
+
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="%F{blue bright dim}> %F{re
-set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 %
 > echo current shell: $0
 
@@ -33,13 +31,15 @@ set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 
 
 
+
+
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="%F{blue bright dim}> %F{re
-set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 %
 > echo current shell: $0
 current shell: zsh
 >
+
+
 
 
 

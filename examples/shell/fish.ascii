@@ -1,6 +1,3 @@
-carlos@darkstar:~/Developer/charmbracelet/vhs$  fish --login --private -C 'func
-tion fish_greeting; end' -C 'function fish_prompt; echo -e "$(set_color --dim b
-rblue)> $(set_color normal)"; end'; clear;
 > echo current shell: (basename (status fish-path))
 
 
@@ -15,10 +12,10 @@ rblue)> $(set_color normal)"; end'; clear;
 
 
 
+
+
+
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  fish --login --private -C 'func
-tion fish_greeting; end' -C 'function fish_prompt; echo -e "$(set_color --dim b
-rblue)> $(set_color normal)"; end'; clear;
 > echo current shell: (basename (status fish-path))
 
 
@@ -33,13 +30,16 @@ rblue)> $(set_color normal)"; end'; clear;
 
 
 
+
+
+
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  fish --login --private -C 'func
-tion fish_greeting; end' -C 'function fish_prompt; echo -e "$(set_color --dim b
-rblue)> $(set_color normal)"; end'; clear;
 > echo current shell: (basename (status fish-path))
 current shell: fish
 >
+
+
+
 
 
 
