@@ -116,8 +116,7 @@ func (vhs *VHS) Setup() {
 		vhs.runShellCommand(` clear; fish --login --private -C '%s' -C '%s'`, noGreeting, vhs.Options.Prompt)
 	case "pwsh":
 		vhs.Options.Prompt = "Function prompt {Write-Host (\"> \") -ForegroundColor Blue -NoNewLine; return \"`0\" }"
-		// TODO: disable history
-		vhs.runShellCommand(` clear; pwsh -Login -NoLogo; clear;`)
+		vhs.runShellCommand(` clear; pwsh -Login -NoLogo; Set-PSReadLineOption -HistorySaveStyle SaveNothing; clear;`)
 	default:
 		vhs.runShellCommand(` clear; %s`, vhs.Options.Shell)
 	}
