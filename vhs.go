@@ -29,6 +29,7 @@ type VHS struct {
 // Options is the set of options for the setup.
 type Options struct {
 	FontFamily    string
+	Shell         string
 	FontSize      int
 	LetterSpacing float64
 	LineHeight    float64
@@ -39,8 +40,10 @@ type Options struct {
 	Video         VideoOptions
 }
 
-const defaultFontSize = 22
-const typingSpeed = 50 * time.Millisecond
+const (
+	defaultFontSize = 22
+	typingSpeed     = 50 * time.Millisecond
+)
 
 // DefaultVHSOptions returns the default set of options to use for the setup function.
 func DefaultVHSOptions() Options {
@@ -98,8 +101,15 @@ func (vhs *VHS) Setup() {
 	vhs.CursorCanvas, _ = vhs.Page.Element("canvas.xterm-cursor-layer")
 
 	// Set Prompt
+	shellSetup := ""
+	switch vhs.Options.Shell {
+	case "", "bash":
+		shellSetup = fmt.Sprintf(` set +o history; unset PROMPT_COMMAND; export PS1="%s"; clear;`, vhs.Options.Prompt)
+	default:
+		shellSetup = fmt.Sprintf(` %s --login; clear;`, vhs.Options.Shell)
+	}
 	vhs.Page.MustElement("textarea").
-		MustInput(fmt.Sprintf(` set +o history; unset PROMPT_COMMAND; export PS1="%s"; clear;`, vhs.Options.Prompt)).
+		MustInput(shellSetup).
 		MustType(input.Enter)
 
 	// Apply options to the terminal

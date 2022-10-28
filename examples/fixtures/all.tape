@@ -6,6 +6,7 @@ Output all.mp4
 Output all.webm
 
 # Settings:
+Set Shell "fish"
 Set FontSize 22
 Set FontFamily "DejaVu Sans Mono"
 Set Height 600

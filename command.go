@@ -202,6 +202,7 @@ var Settings = map[string]CommandFunc{
 	"Theme":         ExecuteSetTheme,
 	"TypingSpeed":   ExecuteSetTypingSpeed,
 	"Width":         ExecuteSetWidth,
+	"Shell":         ExecuteSetShell,
 }
 
 // ExecuteSet applies the settings on the running vhs specified by the
@@ -229,6 +230,11 @@ func ExecuteSetFontFamily(c Command, v *VHS) {
 	_, _ = v.Page.Eval(fmt.Sprintf("() => term.options.fontFamily = '%s'", c.Args))
 }
 
+// ExecuteSetShell applies the shell on the vhs.
+func ExecuteSetShell(c Command, v *VHS) {
+	v.Options.Shell = c.Args
+}
+
 // ExecuteSetHeight applies the height on the vhs.
 func ExecuteSetHeight(c Command, v *VHS) {
 	v.Options.Video.Height, _ = strconv.Atoi(c.Args)
@@ -239,8 +245,10 @@ func ExecuteSetWidth(c Command, v *VHS) {
 	v.Options.Video.Width, _ = strconv.Atoi(c.Args)
 }
 
-const bitSize = 64
-const base = 10
+const (
+	bitSize = 64
+	base    = 10
+)
 
 // ExecuteSetLetterSpacing applies letter spacing (also known as tracking) on the
 // vhs.
