@@ -1,7 +1,7 @@
-carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
-\e[0m\]" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;
+carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="%F{blue bright dim}> %F{re
+set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 %
-\[\e[38;2;90;86;224m\]> \[\e[0m\]echo current shell: $0
+> echo current shell: $0
 
 
 
@@ -16,10 +16,10 @@ carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
 
 
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
-\e[0m\]" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;
+carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="%F{blue bright dim}> %F{re
+set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 %
-\[\e[38;2;90;86;224m\]> \[\e[0m\]echo current shell: $0
+> echo current shell: $0
 
 
 
@@ -34,12 +34,12 @@ carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
 
 
 ────────────────────────────────────────────────────────────────────────────────
-carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="\[\e[38;2;90;86;224m\]> \[
-\e[0m\]" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;
+carlos@darkstar:~/Developer/charmbracelet/vhs$  PS1="%F{blue bright dim}> %F{re
+set_color}" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;
 %
-\[\e[38;2;90;86;224m\]> \[\e[0m\]echo current shell: $0
+> echo current shell: $0
 current shell: zsh
-\[\e[38;2;90;86;224m\]> \[\e[0m\]
+>
 
 
 
