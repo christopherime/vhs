@@ -107,14 +107,15 @@ func (vhs *VHS) Setup() {
 	case "", "bash":
 		shellSetup = fmt.Sprintf(` set +o history; unset PROMPT_COMMAND; export PS1="%s"; clear;`, vhs.Options.Prompt)
 	case "zsh":
-		shellSetup = fmt.Sprintf(` PS1="%s" SAVEHIST=0 HISTSIZE=0 zsh --login;  clear;`, vhs.Options.Prompt)
+		shellSetup = fmt.Sprintf(` PS1="%s" SAVEHIST=0 HISTSIZE=0 zsh --login; clear;`, vhs.Options.Prompt)
 	case "fish":
-		vhs.Options.Prompt = "function fish_prompt; echo -e $(set_color --dim brblue)> $(set_color normal); end"
+		vhs.Options.Prompt = `function fish_prompt; echo -e "$(set_color --dim brblue)> $(set_color normal)"; end`
 		noGreeting := "function fish_greeting; end"
 		shellSetup = fmt.Sprintf(` fish --login --private -C '%s' -C '%s'; clear;`, noGreeting, vhs.Options.Prompt)
 	default:
 		shellSetup = fmt.Sprintf(` %s --login; clear;`, vhs.Options.Shell)
 	}
+	fmt.Println(shellSetup)
 	vhs.Page.MustElement("textarea").
 		MustInput(shellSetup).
 		MustType(input.Enter)
