@@ -114,8 +114,12 @@ func (vhs *VHS) Setup() {
 		vhs.Options.Prompt = `function fish_prompt; echo -e "$(set_color --dim brblue)> $(set_color normal)"; end`
 		noGreeting := "function fish_greeting; end"
 		vhs.runShellCommand(` clear; fish --login --private -C '%s' -C '%s'`, noGreeting, vhs.Options.Prompt)
+	case "pwsh":
+		vhs.Options.Prompt = "Function prompt {Write-Host (\"> \") -ForegroundColor Blue -NoNewLine; return \"`0\" }"
+		// TODO: disable history
+		vhs.runShellCommand(` clear; pwsh -Login -NoLogo; clear;`)
 	default:
-		vhs.runShellCommand(` clear; %s --login`, vhs.Options.Shell)
+		vhs.runShellCommand(` clear; %s`, vhs.Options.Shell)
 	}
 
 	// Apply options to the terminal
