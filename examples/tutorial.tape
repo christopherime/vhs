@@ -6,6 +6,7 @@
 #   Output <path>.webm              Create a WebM output at the given <path>
 #
 # Settings:
+#   Set Shell <string>              Set the shell to be used in the terminal
 #   Set FontSize <number>           Set the font size of the terminal
 #   Set FontFamily <string>         Set the font family of the terminal
 #   Set Height <number>             Set the height of the terminal

@@ -28,8 +28,8 @@ type VHS struct {
 
 // Options is the set of options for the setup.
 type Options struct {
-	FontFamily    string
 	Shell         string
+	FontFamily    string
 	FontSize      int
 	LetterSpacing float64
 	LineHeight    float64
@@ -49,6 +49,7 @@ const (
 func DefaultVHSOptions() Options {
 	return Options{
 		Prompt:        "\\[\\e[38;2;90;86;224m\\]> \\[\\e[0m\\]",
+		Shell:         "bash",
 		FontFamily:    "JetBrains Mono,DejaVu Sans Mono,Menlo,Bitstream Vera Sans Mono,Inconsolata,Roboto Mono,Hack,Consolas,ui-monospace,monospace",
 		FontSize:      defaultFontSize,
 		LetterSpacing: 0,

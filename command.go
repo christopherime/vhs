@@ -191,6 +191,7 @@ func ExecuteOutput(c Command, v *VHS) {
 
 // Settings maps the Set commands to their respective functions.
 var Settings = map[string]CommandFunc{
+	"Shell":         ExecuteSetShell,
 	"FontFamily":    ExecuteSetFontFamily,
 	"FontSize":      ExecuteSetFontSize,
 	"Framerate":     ExecuteSetFramerate,
@@ -202,13 +203,17 @@ var Settings = map[string]CommandFunc{
 	"Theme":         ExecuteSetTheme,
 	"TypingSpeed":   ExecuteSetTypingSpeed,
 	"Width":         ExecuteSetWidth,
-	"Shell":         ExecuteSetShell,
 }
 
 // ExecuteSet applies the settings on the running vhs specified by the
 // option and argument pass to the command.
 func ExecuteSet(c Command, v *VHS) {
 	Settings[c.Options](c, v)
+}
+
+// ExecuteSetShell applies the shell on the vhs.
+func ExecuteSetShell(c Command, v *VHS) {
+	v.Options.Shell = c.Args
 }
 
 // ExecuteSetFontSize applies the font size on the vhs.
@@ -228,11 +233,6 @@ func ExecuteSetFontSize(c Command, v *VHS) {
 func ExecuteSetFontFamily(c Command, v *VHS) {
 	v.Options.FontFamily = c.Args
 	_, _ = v.Page.Eval(fmt.Sprintf("() => term.options.fontFamily = '%s'", c.Args))
-}
-
-// ExecuteSetShell applies the shell on the vhs.
-func ExecuteSetShell(c Command, v *VHS) {
-	v.Options.Shell = c.Args
 }
 
 // ExecuteSetHeight applies the height on the vhs.

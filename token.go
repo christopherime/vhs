@@ -49,6 +49,7 @@ const (
 	SECONDS        = "SECONDS"
 	MINUTES        = "MINUTES"
 	COMMENT        = "COMMENT"
+	SHELL          = "SHELL"
 	FONT_FAMILY    = "FONT_FAMILY"
 	FONT_SIZE      = "FONT_SIZE"
 	FRAMERATE      = "FRAMERATE"
@@ -58,7 +59,6 @@ const (
 	LETTER_SPACING = "LETTER_SPACING"
 	LINE_HEIGHT    = "LINE_HEIGHT"
 	TYPING_SPEED   = "TYPING_SPEED"
-	SHELL          = "SHELL"
 	PADDING        = "PADDING"
 	THEME          = "THEME"
 )
@@ -87,6 +87,7 @@ var keywords = map[string]TokenType{
 	"Hide":          HIDE,
 	"Show":          SHOW,
 	"Output":        OUTPUT,
+	"Shell":         SHELL,
 	"FontFamily":    FONT_FAMILY,
 	"FontSize":      FONT_SIZE,
 	"Framerate":     FRAMERATE,
@@ -95,7 +96,6 @@ var keywords = map[string]TokenType{
 	"LineHeight":    LINE_HEIGHT,
 	"PlaybackSpeed": PLAYBACK_SPEED,
 	"TypingSpeed":   TYPING_SPEED,
-	"Shell":         SHELL,
 	"Padding":       PADDING,
 	"Theme":         THEME,
 	"Width":         WIDTH,
